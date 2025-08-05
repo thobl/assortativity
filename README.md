@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.16746826.svg)](https://doi.org/10.5281/zenodo.16746826)
+
 # Assortativity in Geometric and Scale-Free Networks #
 
 This repository contains the code to run the experiments form the paper
