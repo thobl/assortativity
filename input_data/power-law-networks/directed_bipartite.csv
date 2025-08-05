@@ -1,0 +1,81 @@
+graph,konect_name,type,ple1_hill,ple1_mom,ple1_kern,ple2_hill,ple2_mom,ple2_kern,ple1_type,ple2_type
+Adolescent health (ME),moreno_health,directed,6.68,Inf,Inf,501.0,Inf,Inf,not,not
+Advogato (AD),advogato,directed,3.16,3.35,3.0,3.29,3.43,4.37,weak,weak
+Air traffic control (TC),maayan-faa,directed,6.0,Inf,7.58,4.28,23.22,8.3,not,hardly
+Amazon (Am),amazon0601,directed,3.04,3.58,3.14,12000000,Inf,Inf,weak,not
+arXiv (PHc),cit-HepPh,directed,3.51,4.16,4.18,3.79,4.89,6.46,weak,hardly
+arXiv (THc),cit-HepTh,directed,2.9,2.98,3.11,4.09,9.13,3.84,weak,hardly
+Baidu (BAi),zhishi-baidu-internallink,directed,2.47,2.51,2.57,4.58,5.22,5.57,strong,hardly
+Baidu (BAr),zhishi-baidu-relatedpages,directed,2.72,2.79,3.26,19.52,2.73,2.59,weak,hardly
+Berkley Stanford (BS),web-BerkStan,directed,2.09,2.08,2.06,334.33,3.25,3.36,strong,hardly
+Blogs (Mg),moreno_blogs,directed,3.27,4.11,6.1,5.15,14.7,7.21,hardly,hardly
+CiteSeer (CS),citeseer,directed,3.46,3.84,3.31,4.08,5.55,4.23,weak,hardly
+Cora (CC),subelj_cora,directed,3.03,3.2,2.95,5.1,4.94,6.68,weak,hardly
+DBLP (Pi),dblp-cite,directed,3.1,3.4,2.98,3.42,2.81,2.84,weak,weak
+Edinburgh thesaurus (EA),eat,directed,6.13,3.94,4.97,30.41,Inf,Inf,hardly,not
+Ego Google Plus (GP),ego-gplus,directed,5.83,4.21,4.83,3.91,11.75,Inf,hardly,not
+Ego Twitter (TL),ego-twitter,directed,4.46,3.4,3.79,7.45,Inf,48.62,weak,not
+Epinions (ES),soc-Epinions1,directed,3.43,4.38,3.62,3.54,3.77,3.98,weak,weak
+FOLDOC (FO),foldoc,directed,3.16,2.67,2.5,5.42,7.9,10.01,weak,hardly
+Gnutella (GN),p2p-Gnutella31,directed,5.85,Inf,3.67,8.14,3.15,2.3,not,hardly
+Google (GO),web-Google,directed,2.5,2.55,2.68,5.1,3.34,2.97,strong,hardly
+Google (GC),cfinder-google,directed,2.16,2.17,2.04,3.12,2.71,2.23,strong,weak
+Hudong (HUi),zhishi-hudong-internallink,directed,3.23,3.65,2.34,3.72,2.53,2.63,weak,weak
+Hudong (HUr),zhishi-hudong-relatedpages,directed,3.29,3.46,3.07,126.0,3.62,2.64,weak,hardly
+JDK dependencies (DJ),subelj_jdk,directed,2.07,2.07,1.71,10.62,2.36,2.52,strong,hardly
+JUNG/JAVAX dependencies (Dj),subelj_jung-j,directed,2.0,2.07,1.71,10.62,2.4,2.54,strong,hardly
+Libimseti (LI),libimseti,directed,4.21,2.57,2.67,2.54,2.49,2.56,weak,strong
+Linux (LX),linux,directed,1.97,1.96,2.03,4.42,11.75,5.39,strong,hardly
+Notre Dame (ND),web-NotreDame,directed,2.05,2.57,1.99,2.55,2.73,2.26,strong,strong
+Open flights (OF),openflights,directed,6.38,3.63,1.84,6.21,4.72,1.84,hardly,hardly
+Pokec (PL),soc-pokec-relationships,directed,4.97,6.95,7.76,4.1,4.94,6.52,hardly,hardly
+Slashdot Zoo (SZ),slashdot-zoo,directed,2.99,3.34,4.02,29.57,Inf,Inf,weak,not
+Standford (SF),web-Stanford,directed,2.15,2.15,2.15,63.5,5.55,3.09,strong,hardly
+TREC WT10g (WT),trec-wt10g,directed,2.98,3.67,2.53,2.19,2.17,2.27,weak,strong
+Twitter ICWSM (Ws),munmun_twitter_social,directed,2.54,2.57,2.64,16000,Inf,Inf,strong,not
+Twitter MPI (TF),twitter_mpi,directed,2.02,2.31,2.01,1.91,1.99,2.34,strong,strong
+Twitter WWW (TW),twitter,directed,1.93,2.01,2.43,2.04,2.03,1.98,strong,strong
+US airports (AF),opsahl-usairport,directed,13.2,Inf,2.46,14.89,Inf,2.26,not,not
+US patents (PC),patentcite,directed,4.28,4.6,4.52,3.43,3.6,3.82,weak,weak
+Wikipedia links DE (Wde),wikipedia_link_de,directed,2.42,2.4,2.15,5.17,4.25,3.22,strong,hardly
+Wikipedia links EN (Wen),wikipedia_link_en,directed,2.78,2.79,3.03,4.94,8.58,5.9,weak,hardly
+Wikipedia links FR (Wfr),wikipedia_link_fr,directed,2.4,2.37,2.54,4.0,5.24,3.61,strong,hardly
+Wikipedia links IT (Wit),wikipedia_link_it,directed,2.88,2.76,3.17,6.81,5.46,2.93,weak,hardly
+Wikipedia links JA (Wja),wikipedia_link_ja,directed,2.48,2.47,2.68,5.37,3.73,4.27,strong,hardly
+Wikipedia links PL (Wpl),wikipedia_link_pl,directed,2.59,2.59,2.95,3.82,4.46,4.12,strong,weak
+Wikipedia links PT (Wpt),wikipedia_link_pt,directed,2.58,2.51,2.72,14.7,4.03,4.5,strong,hardly
+Wikipedia links RU (Wru),wikipedia_link_ru,directed,2.48,2.46,2.62,7.8,251.0,4.89,strong,hardly
+Yahoo ads (YD),lasagne-yahoo,directed,2.2,2.18,2.23,4.02,3.98,Inf,strong,not
+Human PPI (MF),maayan-figeys,directed,27.32,Inf,Inf,2.4,2.86,2.04,not,strong
+Human PPI (MS),maayan-Stelzl,directed,4.62,2.44,2.57,6.75,2.42,2.63,weak,hardly
+Movies/Actors (AM),actor-movie,bipartite,4.92,7.67,5.24,6.13,11.99,6.13,hardly,hardly
+arXiv (AC),opsahl-collaboration,bipartite,9.33,12.9,13.99,5.33,6.05,6.75,hardly,hardly
+Book Crossing implicit (BX),bookcrossing_full-rating,bipartite,3.54,2.26,2.31,3.08,3.37,1.88,weak,weak
+Book Crossing ratings (Bx),bookcrossing_rating,bipartite,2.35,2.39,2.43,2.83,2.82,2.86,strong,strong
+Countries DBPedia (CN),dbpedia-country,bipartite,1.43,1.44,1.93,9.77,3.03,Inf,strong,not
+DBLP (PA),dblp-author,bipartite,5.22,4.3,6.75,2.22,2.23,2.14,hardly,strong
+Discogs labels/artists (Dl),discogs_affiliation,bipartite,2.08,2.15,1.93,3.12,3.11,3.29,strong,weak
+Discogs genres/artists (Da),discogs_genre,bipartite,7.67,2.72,1.0,3.12,3.07,3.21,hardly,weak
+Discogs genres/labels (Dr),discogs_lgenre,bipartite,1.9,2.56,7.76,2.2,2.2,2.17,hardly,strong
+Flickr (FG),flickr-groupmemberships,bipartite,2.66,3.7,2.85,5.22,6.52,6.29,weak,hardly
+Genres DBPedia (GE),dbpedia-genre,bipartite,2.16,2.57,Inf,5.61,12.49,Inf,not,not
+Github (GH),github,bipartite,2.08,2.07,2.07,2.77,4.07,3.31,strong,weak
+Jester100 (J1),jester1,bipartite,43000,Inf,Inf,510000,Inf,Inf,not,not
+Jester150 (J2),jester2,bipartite,3.26,3.32,5.46,251.0,3.29,2.73,hardly,hardly
+LiveJournal (LG),livejournal-groupmemberships,bipartite,1.78,1.8,1.8,1000,Inf,4.32,strong,not
+Locations DBPedia (LO),dbpedia-location,bipartite,2.02,2.02,2.05,6.52,3.9,38.04,strong,hardly
+Movies DBPedia (ST),dbpedia-starring,bipartite,3.94,4.85,5.98,5.52,13.35,8.69,hardly,hardly
+Occupations DBPedia (OC),dbpedia-occupation,bipartite,1.73,1.74,1.73,6.56,19.18,1000,strong,hardly
+Orkut (OG),orkut-groupmemberships,bipartite,1.88,1.89,1.89,53.63,2.4,2.63,strong,hardly
+Producers DBPedia (PR),dbpedia-producer,bipartite,3.69,3.89,4.13,4.09,4.58,2.12,weak,weak
+Labels DBPedia (RL),dbpedia-recordlabel,bipartite,2.05,2.08,2.09,5.95,5.18,6.05,strong,hardly
+Reuters (RE),reuters,bipartite,6.38,1.55,1.56,6.46,Inf,Inf,hardly,not
+TREC (TR),gottron-trec,bipartite,1.61,1.63,1.6,3.93,8.87,2.94,strong,hardly
+TV tropes DBPedia (DBT),dbtropes-feature,bipartite,3.18,3.73,3.37,3.34,3.07,2.97,weak,weak
+Teams DBPedia (TM),dbpedia-team,bipartite,8.46,12.76,2.2,21.83,Inf,Inf,hardly,not
+vi.sualize.us images/tags (Vti),pics_ti,bipartite,3.15,3.34,2.97,1.81,1.85,1.86,weak,strong
+vi.sualize.us tags/users (Vut),pics_ut,bipartite,1.81,1.85,1.85,2.54,2.57,2.13,strong,strong
+vi.sualize.us images/users (Vui),pics_ui,bipartite,3.15,3.31,2.98,2.49,2.58,2.51,weak,strong
+Web trackers (WT),trackers-trackers,bipartite,2.03,2.03,2.04,2.62,2.1,2.05,strong,strong
+Writers DBPedia (WR),dbpedia-writer,bipartite,3.77,4.1,4.06,5.88,7.62,15.08,weak,hardly
+Youtube (YG),youtube-groupmemberships,bipartite,2.31,2.36,2.45,2.79,2.87,2.56,strong,strong

@@ -1,0 +1,6 @@
+*.aux
+*.log
+*.out
+agirg-generator.pdf
+*.synctex.gz
+auto

@@ -1,0 +1,28 @@
+
+name: assortativity
+services:
+  experiments:
+    build:
+      context: ./
+      dockerfile: ./docker/experiments/Dockerfile
+    stdin_open: true
+    tty: true
+    container_name: assortativity.experiments
+    working_dir: /experiments
+    volumes:
+      - .:/experiments
+    entrypoint: ["bash", "-l"]
+  eval:
+    build: 
+      context: ./
+      dockerfile: ./docker/eval/Dockerfile
+    stdin_open: true
+    tty: true
+    container_name: assortativity.eval
+    working_dir: /experiments/R
+    volumes:
+      - .:/experiments
+      ## excluding virtual environment files (because relevant
+      ## packages are installed globally in the container)
+      - /experiments/R/renv/
+    entrypoint: ["bash", "-l"]

@@ -1,0 +1,224 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage[american]{babel}
+\usepackage[ttscale=.85]{libertine}
+\usepackage{libertinust1math}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{sectsty}
+\usepackage{graphicx}
+\usepackage{todonotes}
+\usepackage{siunitx}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{mathtools}
+\usepackage{paralist}
+
+\usepackage{fnpct}
+\setfnpct{after-punct-space=-0.15em}
+
+\makeatletter
+\g@addto@macro\bfseries{\boldmath}
+\makeatother
+
+
+\begin{document}
+\allsectionsfont{\sffamily}
+
+\section{Experiments}
+\label{sec:experiments}
+
+\paragraph{what do we want to see}
+
+\begin{itemize}
+\item joint distribution
+  \begin{itemize}
+  \item distribution for random edge; also conditioning on the degree
+    of the other endpoint
+  \item simple heat map for degrees of edges (easy to understand)
+  \item heat map of relative change
+  \end{itemize}
+\item assortativity values
+  \begin{itemize}
+  \item real-world assortativity values: compare Pearson to Spearman
+    and Kendall
+  \item assortativity depending on sigma
+  \item assortativity (different variants) for fixed different sigma
+    depending on graph size
+  \end{itemize}
+\item sanity checks for the model: average degree for increasing graph
+  size and different values of $\sigma$
+\end{itemize}
+
+\paragraph{required graphs}
+
+\begin{itemize}
+\item selection of real-world graphs: only strong and weak ple, only
+  undirected
+\item properties of generated graphs:
+  \begin{itemize}
+  \item average degree 15
+  \item temperature 0
+  \item dimension 2
+  \item $\tau \in \{2.2, 2.6, 2.8, 3.0, 3.5\}$
+  \item $n \in \{12500, 25000, 50000, 100000, 200000\}$
+  \item $\sigma \in \{0.2, 0.4, 0.6, 0.8, 1.0, 1.2, 1.4, 1.6, 1.8\}$
+  \item this makes $5 \cdot 5 \cdot 9 = 225$ combinations
+    $\rightarrow$ 5 seeds for testing, 10 for final run
+  \end{itemize}
+\end{itemize}
+
+\paragraph{required stats}
+
+\begin{itemize}
+\item \texttt{stats} -- basic information (graph size etc)
+  plus different assortativity measures
+\item \texttt{degree\_distribution} -- degree distribution for vertices
+  and edges; use the edge-variant with 25 buckets and look at bucket
+  ids $\{0, 6, 12, 18, 24\}$ (the latter allowing to restrict )
+\item \texttt{joint\_histogram} -- not sure whether we need this
+\item \texttt{joint\_degree\_distr} -- not sure whether we need this
+\item \texttt{edge\_degrees} -- not sure whether we need this
+\end{itemize}
+
+
+
+\subsection{Generating ACLs}
+\label{sec:generating-acls}
+
+very briefly describe how to estimate the average degree and how to
+generate using geometric jumps
+
+
+\subsection{Generating AGIRGs}
+\label{sec:generating-agirgs}
+
+
+We want to use the GIRG generator as black box to generate AGIRGs.
+For this, we have to choose GIRG-weights such that the resulting GIRG
+is a supergraph of the desired AGIRG and then do an additional coin
+flip for each edge correcting the probability.
+
+For this, let $w_v$ for all $v \in V$ denote the weights of the AGIRG
+and let $W = \sum_{v \in V} w_v$ be the total weight.  Assuming
+$w_u \ge w_v$, we have the connection probability
+%
+\begin{equation*}
+  p_{uv} = \min \left\{ 1, \left( \frac{w_u^{\min\{1, \tau - \sigma\}}
+        \cdot w_v^\sigma}{W\cdot \rVert x_u - x_v\rVert^d}
+    \right)^\alpha \right\}. 
+\end{equation*}
+%
+For the GIRG we are going to generate, we use weights $w_v'$ with a
+total weight $W' = \sum_{v \in V} w_v'$ and we have connection
+probability
+%
+\begin{equation*}
+  p_{uv}' = \min \left\{ 1, \left( \frac{w_u' \cdot w_v'}{W'\cdot
+        \rVert x_u - x_v\rVert^d} \right)^\alpha \right\}.
+\end{equation*}
+%
+Our goal is to choose weights $w_v'$ such that $p_{uv}' \ge p_{uv}$
+for every pair of vertices $u, v \in V$.
+
+Without loss of generality, we assume that $w_v \ge 1$ for all
+$v \in V$.  If this is not the case, we can simply scale them, which
+yields a supergraph and then subsample with the correct weights.
+
+As $w_u \ge 1$ it holds that $w_u^{\min\{1, \tau - \sigma\}} \le w_u$.
+Thus, to show $p_{uv}' \ge p_{uv}$, it suffices to show that
+$p_{uv}' = 1$ or that
+%
+\begin{equation}
+  \label{eq:desired-inequality}
+  \frac{w_u' \cdot w_v'}{W'} \ge \frac{w_u \cdot w_v^\sigma}{W}
+\end{equation}
+
+\subsubsection{$\sigma < 1$}
+
+The case $\sigma < 1$ is easy.  Let $w_{\min}$ be the minimum weight
+(minimum over all $w_v$) and set
+$w_v' = w_v \cdot w_{\min}^{\sigma - 1}$.  As $\sigma < 1$, it holds
+that $w_{\min}^{\sigma - 1} \ge w_v^{\sigma - 1}$.  Thus, we get
+%
+\begin{equation*}
+  \frac{w_u' \cdot w_v'}{W'} = 
+  \frac{w_u \cdot w_v \cdot w_{\min}^{\sigma - 1}}{W} \ge 
+  \frac{w_u \cdot w_v \cdot w_{v}^{\sigma - 1}}{W} =
+  \frac{w_u \cdot w_v^\sigma}{W}
+\end{equation*}
+
+\subsubsection{$\sigma > 1$}
+
+It remains to handle $\sigma > 1$.  The naive way would be to scale
+all weights by the same factor, e.g., by $w_{\max}^{\sigma - 1}$.
+However, this would result in weights that are substantially larger
+than necessary for two reasons.  First, if $w_u' \cdot w_v' \ge W'$ we
+have $p_{uv}' = 1$ and thus even larger weights do not have to be
+scaled.  Secondly (and probably more importantly), the smaller weights
+are scaled more than necessary.
+
+We deal with this as follows.  We define auxiliary weight $w''$
+as
+%
+\begin{equation*}
+  w_v'' = w_v \cdot \min\{W^{1 / (\sigma + 1)}, w_v\}^{(\sigma - 1) / 2}.
+\end{equation*}
+%
+With this, let $W'' = \sum_{v \in V} w_v''$.  We claim that
+$w_v' = w_v'' \cdot \frac{W''}{W}$ yields weights such that
+$p_{uv}' \ge p_{uv}$.
+
+To see this, first note that we get from $w''$ to $w'$ by scaling
+every weight with the same factor $\frac{W''}{W}$.  Thus,
+$W' = W'' \cdot \frac{W''}{W}$.  With this, we get
+%
+\begin{equation*}
+  \frac{w_u' \cdot w_v'}{W'} =
+  \frac{w_u'' \cdot \frac{W''}{W}  \cdot w_v'' \cdot
+    \frac{W''}{W}}{W'' \cdot \frac{W''}{W}}
+  = \frac{w_u'' \cdot  w_v''}{W}.
+\end{equation*}
+%
+It remains to plug in the definition of $w_v''$, making a case
+distinction for the minimum.  If $w_v > W^{1 / (\sigma + 1)}$, we get
+%
+\begin{equation*}
+  \frac{w_u' \cdot w_v'}{W'} =
+  \frac{w_u'' \cdot  w_v''}{W} \ge
+  \frac{w_v''^2}{W} = 
+  \frac{\left(w_v \cdot W^{\frac{\sigma - 1}{2(\sigma +
+          1)}}\right)^2}{W} >
+  \frac{\left(W^{\frac{1}{\sigma + 1}} \cdot W^{\frac{\sigma - 1}{2(\sigma +
+          1)}}\right)^2}{W} = 1.
+\end{equation*}
+%
+Thus, if $w_v > W^{1 / (\sigma + 1)}$ we get $p_{uv}' = 1 \ge p_{uv}$
+and it remains to consider the case $w_v \le W^{1 / (\sigma + 1)}$.
+For this, we get $w_v'' = w_v \cdot w_v^{(\sigma - 1) / 2}$.
+Moreover, as $w_u \ge w_v$, we also have
+$w_u'' \ge w_u \cdot w_v^{(\sigma - 1) / 2}$ (note the $w_v$ instead of
+$w_u$ in the last factor).  With this, we obtain 
+%
+\begin{equation*}
+  \frac{w_u' \cdot w_v'}{W'} =
+  \frac{w_u'' \cdot  w_v''}{W} \ge
+  \frac{w_u \cdot w_v^{(\sigma - 1) / 2} \cdot w_v \cdot w_v^{(\sigma
+      - 1) / 2}}{W} =
+  \frac{w_u \cdot w_v \cdot w_v^{\sigma - 1}}{W} =
+  \frac{w_u \cdot w_v^\sigma}{W},
+\end{equation*}
+%
+which shows that $p_{uv}' \ge p_{uv}$ also holds in this case.
+
+\subsubsection{Average Degree}
+\label{sec:average-degree}
+
+Note sure how to best scale the weights to get the desired average
+degree.  I currently just generate multiple AGIRGs, scaling the
+weights in between to roughly get the desired average degree.
+
+\end{document}

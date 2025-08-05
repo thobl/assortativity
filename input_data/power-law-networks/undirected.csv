@@ -1,0 +1,36 @@
+graph,konect_name,type,ple_hill,ple_mom,ple_kern,ple_type
+CAIDA (IN),as-caida20071105,undirected,2.1,2.11,2.11,strong
+Skitter (SK),as-skitter,undirected,2.38,2.36,2.43,strong
+Actor collaborations (CL),actor-collaboration,undirected,3.71,6700,2.36,hardly
+Amazon (CA),com-amazon,undirected,3.99,3.48,3.44,weak
+arXiv (AP),ca-AstroPh,undirected,4.41,5.78,7.29,hardly
+Bible names (MN),moreno_names,undirected,3.09,3.36,2.88,weak
+Brightkite (BK),loc-brightkite_edges,undirected,3.51,3.8,2.96,weak
+Catster (Sc),petster-friendships-cat,undirected,2.09,2.06,1.98,strong
+Catster/Dogster (Scd),petster-carnivore,undirected,2.1,2.11,2.04,strong
+DBLP (CD),com-dblp,undirected,6.59,13.99,3.06,hardly
+Dogster (Sd),petster-friendships-dog,undirected,2.15,2.15,2.12,strong
+Douban (DB),douban,undirected,4.42,6.88,1.86,hardly
+U. Rovira I Virgili (A@),arenas-email,undirected,6.49,Inf,Inf,not
+Euro roads (ET),subelj_euroroad,undirected,4.73,44.48,29.57,hardly
+Flickr (LF),flickr-links,undirected,3.94,4.29,5.02,hardly
+Flickr (FI),flickrEdges,undirected,6.18,1.79,1.65,hardly
+Flixster (FX),flixster,undirected,53.63,1.93,1.95,hardly
+Gowalla (GW),loc-gowalla_edges,undirected,2.8,2.8,2.86,strong
+Hamsterster (Shf),petster-friendships-hamster,undirected,4.45,8.09,3.51,hardly
+Hamsterster (Sh),petster-hamster,undirected,4.57,25.39,6.32,hardly
+Hyves (HY),hyves,undirected,2.98,2.23,1.99,strong
+LiveJournal (Lj),livejournal-links,undirected,3.86,4.04,3.15,weak
+Livemocha (LM),livemocha,undirected,9.13,Inf,2.39,not
+Orkut (OR),orkut-links,undirected,3.58,2.65,3.35,weak
+Power grid (UG),opsahl-powergrid,undirected,6.62,7.76,9.2,hardly
+Proteins (Mp),moreno_propro,undirected,3.09,3.31,3.87,weak
+Reactome (RC),reactome,undirected,4.86,34.33,Inf,not
+Roads CA (RO),roadNet-CA,undirected,18.86,Inf,Inf,not
+Roads PA (RD),roadNet-PA,undirected,18.24,Inf,Inf,not
+Roads TX (R1),roadNet-TX,undirected,21.83,Inf,Inf,not
+Route views (AS),as20000102,undirected,2.13,2.16,2.14,strong
+WordNet (WO),wordnet-words,undirected,2.86,2.68,2.61,strong
+Youtube (CY),com-youtube,undirected,2.48,2.58,2.17,strong
+Human PPI (MV),maayan-vidal,undirected,3.04,3.4,3.03,weak
+

@@ -1,0 +1,3 @@
+[submodule "girgs"]
+	path = girgs
+	url = https://github.com/chistopher/girgs.git
