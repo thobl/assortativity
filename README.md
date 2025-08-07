@@ -6,7 +6,7 @@ This repository contains the code to run the experiments form the paper
 
 > Marc Kaufmann, Ulysse Schaller, Thomas Bläsius, Johannes Lengler:
 > *Assortativity in Geometric and Scale-Free Networks.*
-> [TODO: add link](https://arxiv.org/abs/??)
+> [arxiv.org/abs/2508.04608](https://arxiv.org/abs/2508.04608)
 
 
 Running the experiments consists of the following steps:
